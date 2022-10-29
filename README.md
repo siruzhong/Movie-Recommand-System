@@ -24,15 +24,15 @@
 
 ### Movie：电影数据表
 
-<img src="https://gitee.com/zhong_siru/images/raw/master//img/image-20201221005005539.png" alt="image-20201221005005539" style="zoom:50%;" />
+<img src="https://gitee.com/siruzhong/images/raw/master//img/image-20201221005005539.png" alt="image-20201221005005539" style="zoom:50%;" />
 
 ### Rating：用户评分表
 
-<img src="https://gitee.com/zhong_siru/images/raw/master//img/image-20201221005152127.png" alt="image-20201221005152127" style="zoom:50%;" />
+<img src="https://gitee.com/siruzhong/images/raw/master//img/image-20201221005152127.png" alt="image-20201221005152127" style="zoom:50%;" />
 
 ### User：用户表
 
-<img src="https://gitee.com/zhong_siru/images/raw/master//img/image-20201221185208004.png" alt="image-20201221185208004" style="zoom: 50%;" />
+<img src="https://gitee.com/siruzhong/images/raw/master//img/image-20201221185208004.png" alt="image-20201221185208004" style="zoom: 50%;" />
 
 
 
@@ -48,7 +48,7 @@
 3. 新建`StatisticalRecommendtion`子模块，用于统计推荐
 4. 新建`AlsOfflineRecommendation`子模块，实现ALS算法离线推荐
 
-<img src="https://gitee.com/zhong_siru/images/raw/master//img/image-20201221005901060.png" alt="image-20201221005901060" style="zoom:67%;" />
+<img src="https://gitee.com/siruzhong/images/raw/master//img/image-20201221005901060.png" alt="image-20201221005901060" style="zoom:67%;" />
 
 ## 2. pom.xml配置
 
@@ -314,7 +314,7 @@
 
 > 将数据文件 movies.csv，ratings.csv，tags.csv 复制到资源文件目录 src/main/resources 下
 
-![image-20201221010738327](https://gitee.com/zhong_siru/images/raw/master//img/image-20201221010738327.png)
+![image-20201221010738327](https://gitee.com/siruzhong/images/raw/master//img/image-20201221010738327.png)
 
 > 然后编写`log4j`配置文件（log4j 对日志的管理，需要通过配置文件来生效）
 
@@ -327,7 +327,7 @@ log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
 log4j.appender.stdout.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS}  %5p --- [%50t]  %-80c(line:%5L)  :  %m%n
 ```
 
-![image-20201219191503158](https://gitee.com/zhong_siru/images/raw/master//img/image-20201219191503158.png)
+![image-20201219191503158](https://gitee.com/siruzhong/images/raw/master//img/image-20201219191503158.png)
 
 ## 2. 编写代码
 
@@ -505,7 +505,7 @@ object DataLoad {
   show dbs
   ```
 
-![image-20201221112629455](https://gitee.com/zhong_siru/images/raw/master//img/image-20201221112629455.png)
+![image-20201221112629455](https://gitee.com/siruzhong/images/raw/master//img/image-20201221112629455.png)
 
 + 切换到`recommender`数据库，查看所有的表，可以发现三张表成功写入
 
@@ -513,7 +513,7 @@ object DataLoad {
   show tables
   ```
 
-![image-20201221112827677](https://gitee.com/zhong_siru/images/raw/master//img/image-20201221112827677.png)
+![image-20201221112827677](https://gitee.com/siruzhong/images/raw/master//img/image-20201221112827677.png)
 
 + 检验写入的数据是否正确，与对应的`.csv`文件对比，三个表的数据完全正确
 
@@ -522,11 +522,11 @@ object DataLoad {
   db.Movie.find().count()		#查看电影表元组个数
   ```
 
-![image-20201221112959957](https://gitee.com/zhong_siru/images/raw/master//img/image-20201221112959957.png)
+![image-20201221112959957](https://gitee.com/siruzhong/images/raw/master//img/image-20201221112959957.png)
 
-![image-20201221113318426](https://gitee.com/zhong_siru/images/raw/master//img/image-20201221113318426.png)
+![image-20201221113318426](https://gitee.com/siruzhong/images/raw/master//img/image-20201221113318426.png)
 
-![image-20201221113406814](https://gitee.com/zhong_siru/images/raw/master//img/image-20201221113406814.png)
+![image-20201221113406814](https://gitee.com/siruzhong/images/raw/master//img/image-20201221113406814.png)
 
 
 
@@ -685,23 +685,23 @@ object StatisticsRecommend {
 
 可以发现对应四种统计生成了新的四张表：
 
-<img src="https://gitee.com/zhong_siru/images/raw/master//img/image-20201221193412007.png" alt="image-20201221193412007" style="zoom:67%;" />
+<img src="https://gitee.com/siruzhong/images/raw/master//img/image-20201221193412007.png" alt="image-20201221193412007" style="zoom:67%;" />
 
 + 历史热门电影推荐：`RateMoreMovies`
 
-  <img src="https://gitee.com/zhong_siru/images/raw/master//img/image-20201221193031973.png" alt="image-20201221193031973" style="zoom: 50%;" />
+  <img src="https://gitee.com/siruzhong/images/raw/master//img/image-20201221193031973.png" alt="image-20201221193031973" style="zoom: 50%;" />
 
 + 最近热门电影统计：`RateMoreMoviesRecently`
 
-  <img src="https://gitee.com/zhong_siru/images/raw/master//img/image-20201221193018351.png" alt="image-20201221193018351" style="zoom:50%;" />
+  <img src="https://gitee.com/siruzhong/images/raw/master//img/image-20201221193018351.png" alt="image-20201221193018351" style="zoom:50%;" />
 
 + 电影平均得分统计：`AverageMoviesScore`
 
-  <img src="https://gitee.com/zhong_siru/images/raw/master//img/image-20201221193000721.png" alt="image-20201221193000721" style="zoom:50%;" />
+  <img src="https://gitee.com/siruzhong/images/raw/master//img/image-20201221193000721.png" alt="image-20201221193000721" style="zoom:50%;" />
 
 + 类别top10电影统计：`GenersTopMoives`
 
-  <img src="https://gitee.com/zhong_siru/images/raw/master//img/image-20201221193301771.png" alt="image-20201221193301771" style="zoom:50%;" />
+  <img src="https://gitee.com/siruzhong/images/raw/master//img/image-20201221193301771.png" alt="image-20201221193301771" style="zoom:50%;" />
 
 我们可以查看具体表内的信息
 
@@ -722,11 +722,11 @@ db.GenresTopMoives.find().pretty()	 		#查看GenersTopMoivess表
 
 电影平均得分统计：
 
-![image-20201221185715257](https://gitee.com/zhong_siru/images/raw/master//img/image-20201221185715257.png)
+![image-20201221185715257](https://gitee.com/siruzhong/images/raw/master//img/image-20201221185715257.png)
 
 类别top10电影统计：
 
-![image-20201221194025492](https://gitee.com/zhong_siru/images/raw/master//img/image-20201221194025492.png)
+![image-20201221194025492](https://gitee.com/siruzhong/images/raw/master//img/image-20201221194025492.png)
 
 
 
@@ -856,7 +856,7 @@ object AlsOfflineRecommend {
 >
 >对于我们的模型，这并不一定是最优的参数选取，所以我们需要对模型 进行评估。通常的做法是计算均方根误差（RMSE），考察预测评分与实际评分之 间的误差。
 >
->![image-20201221194959338](https://gitee.com/zhong_siru/images/raw/master//img/image-20201221194959338.png)有了 RMSE，我们可以就可以通过多次调整参数值，来选取 RMSE 最小的一组 作为我们模型的优化选择。
+>![image-20201221194959338](https://gitee.com/siruzhong/images/raw/master//img/image-20201221194959338.png)有了 RMSE，我们可以就可以通过多次调整参数值，来选取 RMSE 最小的一组 作为我们模型的优化选择。
 
 编写训练方法`ALSTrainer.scala`
 
@@ -944,11 +944,11 @@ object ALSTrainer {
 
 运行`AlsOfflineRecommend.scala`，可以发现新生成了表`userRecs`
 
-![image-20201221200408149](https://gitee.com/zhong_siru/images/raw/master//img/image-20201221200408149.png)
+![image-20201221200408149](https://gitee.com/siruzhong/images/raw/master//img/image-20201221200408149.png)
 
 这是基于ALS算法推荐的电影列表
 
-<img src="https://gitee.com/zhong_siru/images/raw/master//img/image-20201221200304364.png" alt="image-20201221200304364" style="zoom:67%;" />
+<img src="https://gitee.com/siruzhong/images/raw/master//img/image-20201221200304364.png" alt="image-20201221200304364" style="zoom:67%;" />
 
 我们可以查看该表的详细信息
 
@@ -956,7 +956,7 @@ object ALSTrainer {
 db.UserRecs.find().pretty()
 ```
 
-![image-20201221200502751](https://gitee.com/zhong_siru/images/raw/master//img/image-20201221200502751.png)
+![image-20201221200502751](https://gitee.com/siruzhong/images/raw/master//img/image-20201221200502751.png)
 
 可以看到推荐的电影列表信息
 
@@ -964,5 +964,5 @@ db.UserRecs.find().pretty()
 
 运行`ALSTrainer.java`，可以看到从我们设置的参数中打印的最优参数
 
-![image-20201221202251519](https://gitee.com/zhong_siru/images/raw/master//img/image-20201221202251519.png)
+![image-20201221202251519](https://gitee.com/siruzhong/images/raw/master//img/image-20201221202251519.png)
 
